@@ -27,9 +27,9 @@ crawler:
 report:
   mode: "incremental" # 可选: "daily"|"incremental"|"current"
   title: "TrendRadar 热点监控"
-  max_news: 50
+  max_news: 300
   sort_by: hot        # hot | time
-  rank_threshold: 5 # 排名高亮阈值
+  rank_threshold: 20 # 排名高亮阈值
 
 notification:
   enable_notification: true # 是否启用通知功能，如果 false，则不发送手机通知
@@ -49,8 +49,8 @@ notification:
     # 注意：GitHub Actions 执行时间不稳定，时间范围建议至少留足 2 小时
     # 如果想要精准的定时推送，建议使用 Docker 部署在个人服务器上
     time_range:
-      start: "00:00"  # 推送时间窗口开始（北京时间）
-      end: "24:00"    # 推送时间窗口结束（北京时间）
+      start: "08:00"  # 推送时间窗口开始（北京时间）
+      end: "18:00"    # 推送时间窗口结束（北京时间）
     once_per_day: false  # 每天在时间窗口内只推送一次，如果 false，则窗口内每次执行都推送
     push_record_retention_days: 7  # 推送记录保留天数
 
@@ -106,6 +106,8 @@ platforms:
     name: "bilibili 热搜"
   - id: "cls-hot"
     name: "财联社热门"
+  - id: "cls-telegraph"
+    name: "财联社电报"
   - id: "ifeng"
     name: "凤凰网"
   - id: "tieba"
@@ -117,4 +119,4 @@ platforms:
   - id: "zhihu"
     name: "知乎"
   - id: "xueqiu"
-    name: "雪球财经"
+    name: "雪球"
