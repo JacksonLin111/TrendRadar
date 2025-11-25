@@ -25,7 +25,7 @@ crawler:
 
 # 推送模式选择
 report:
-  mode: "incremental" # 可选: "daily"|"incremental"|"current"
+  mode: "daily" # 可选: "daily"|"incremental"|"current"
   title: "TrendRadar 热点监控"
   max_news: 300
   sort_by: hot        # hot | time
